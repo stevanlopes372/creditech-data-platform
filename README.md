@@ -38,7 +38,7 @@ O núcleo da camada Gold é um Modelo Dimensional (Star Schema), projetado para 
 Um requisito crítico do negócio é analisar as propostas de empréstimo com a "fotografia" exata do cliente no momento da solicitação (renda, score, etc.). Para resolver isso, a Dim_Cliente é implementada usando a técnica SCD (Slowly Changing Dimension) Tipo 2, que versiona o regivarcharo do cliente a cada mudança relevante, preservando todo o histórico.
 
 ## Esquema Físico
-`fato_propostas`
+### `fato_propostas`
 
 Grão: Uma linha por proposta de empréstimo.
 
@@ -54,7 +54,7 @@ Grão: Uma linha por proposta de empréstimo.
 - foi_aprovada (boolean)     -- Flag (True=Sim, False=Não)
 ```
 
-`dim_cliente`
+### `dim_cliente`
 
 Grão: Uma linha por versão de um cliente (SCD Tipo 2).
 
@@ -75,7 +75,7 @@ Grão: Uma linha por versão de um cliente (SCD Tipo 2).
 - flag_versao_atual (boolean)
 ```
 
-`Dim_Data`
+### `dim_data`
 
 Grão: Um dia do calendário.
 
